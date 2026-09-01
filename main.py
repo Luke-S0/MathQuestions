@@ -1,5 +1,6 @@
 import random
 
+version = "0.1.0"
 correct = 0
 total = 0
 
