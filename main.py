@@ -3,6 +3,7 @@ import random
 correct = 0
 total = 0
 
+log = [] # 2d array - 0 question, 1 userans, 2 correctans, 3 result (bool)
 length = int(input("How many questions? "))
 for i in range(length):
     num1 = random.randint(1,12)
@@ -13,9 +14,11 @@ for i in range(length):
     total+=1
     if userans == correctans:
         print("Correct")
+        log.append([f"{num1} * {num2}", userans, correctans, True])
         correct+=1
     else:
         print("Incorrect")
+        log.append([f"{num1} * {num2}", userans, correctans, False])
 
     
 print(f"{correct}/{total} questions answered correctly.")
