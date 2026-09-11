@@ -1,7 +1,7 @@
 import random
 import time
 
-version = "0.1.0"
+version = "0.2.0"
 correct = 0
 total = 0
 
