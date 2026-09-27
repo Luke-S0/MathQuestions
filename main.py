@@ -1,5 +1,16 @@
 import random
 import time
+import os
+
+def clear():
+    try:
+        if os.name == "nt":
+            os.system("cls")
+        else:
+            os.system("clear")
+    except Exception as e:
+        print(e)
+
 
 version = "0.2.0"
 correct = 0
@@ -21,6 +32,8 @@ for i in range(length):
     else:
         print("Incorrect")
         log.append([f"{num1} * {num2}", userans, correctans, False])
+    time.sleep(1)
+    clear()
 
 
 print("OVERVIEW")
@@ -28,6 +41,7 @@ for i in range(0, len(log)):
     print(f"Question {i+1} : {log[i][0]}\nYou answered {log[i][1]}; correct answer was {log[i][2]}\nCorrect? {log[i][3]}")
     print("-"*50)
     time.sleep(1)
+    clear()
 
 print(f"{correct}/{total} questions answered correctly.")
 
