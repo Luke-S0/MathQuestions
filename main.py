@@ -16,13 +16,32 @@ version = "0.2.0"
 correct = 0
 total = 0
 
+operator = ""
+
 log = [] # 2d array - 0 question, 1 userans, 2 correctans, 3 result (bool)
+clear()
+print("SETUP")
 length = int(input("How many questions? "))
+
+while operator not in ["+", "-", "*", "/"]:
+    operator = input("Choose an operation.\n+ - x /\n")
+
 for i in range(length):
     num1 = random.randint(1,12)
     num2 = random.randint(1,12)
-    correctans = num1 * num2
-    userans = int(input(f"Question {i+1}\n{num1} x {num2} = "))
+    match operator:
+        case "+":
+            correctans = num1 + num2
+            userans = int(input(f"Question {i+1}\n{num1} + {num2} = "))
+        case "-":
+            correctans = num1 - num2
+            userans = int(input(f"Question {i+1}\n{num1} - {num2} = "))
+        case "*":
+            correctans = num1 * num2
+            userans = int(input(f"Question {i+1}\n{num1} x {num2} = "))
+        case "/":
+            correctans = num1 / num2
+            userans = float(input(f"Question {i+1}\n{num1} / {num2} = "))
 
     total+=1
     if userans == correctans:
